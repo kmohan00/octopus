@@ -85,6 +85,27 @@ function Activity() {
     selectedData = dataByMonths;
   }
 
+  //Log below!
+
+  // Initial log data
+  const [log, setLog] = useState([
+    {
+      timeStamp: '2024-04-13 10:00:00',
+      duration: '30m 15s',
+      type: 'Enrichment - Toy',
+      level: 'Low',
+      sleepState: 'No',
+    },
+    {
+      timeStamp: '2024-04-13 11:00:00',
+      duration: '20m 30s',
+      type: 'Enrichment - Toy',
+      level: 'Medium',
+      sleepState: 'Yes',
+    },
+    // Add more log entries as needed
+  ]);
+
   return (
     <div className='main'>
             <h1>Activity</h1>
@@ -104,11 +125,30 @@ function Activity() {
               </div>
               <Line className='line' data={selectedData} options={options} />
             </div>
-            <div className='log'>
+            <div className='mlog'>
               <p>
                 Activity Log
               </p>
-              
+              <div className="activity-log-container">
+                <div className="header">
+                  <div>Time Stamp</div>
+                  <div>Duration</div>
+                  <div>Activity Type</div>
+                  <div>Activity Level</div>
+                  <div>Sleep State</div>
+                </div>
+                <div className="log">
+                  {log.map((entry, index) => (
+                    <div key={index} className="log-entry">
+                      <div>{entry.timeStamp}</div>
+                      <div>{entry.duration}</div>
+                      <div>{entry.type}</div>
+                      <div>{entry.level}</div>
+                      <div>{entry.sleepState}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
     </div>
   );

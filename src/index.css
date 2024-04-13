@@ -67,13 +67,15 @@ code {
   /* max-height: 90%; */
   max-height: 85%;
 }
-.log{
+.mlog{
   border: 2px solid #090a0a;
   border-radius: 12px;
   margin: 5px;
   margin-top: 10px;
   padding-left: 20px;
   margin-right: 20px;
+  margin-bottom: 10px;
+  margin-top: 15px;
 }
 .horiz{
   display: flex;
@@ -96,4 +98,34 @@ code {
   margin-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
+}
+/* Activity Log Styling Below */
+.activity-log-container {
+  width: 100%;
+  max-height: 300px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+.header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 8px;
+}
+.log {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.log-entry {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.log-entry:nth-child(even) {
+  background-color: #ffffff;
 }
