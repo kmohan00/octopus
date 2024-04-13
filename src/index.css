@@ -50,3 +50,39 @@ code {
   margin-top: 10px;
   padding-left: 20px;
 }
+.chart{
+  border: 2px solid #090a0a;
+  border-radius: 12px;
+  margin: 5px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.log{
+  border: 2px solid #090a0a;
+  border-radius: 12px;
+  margin: 5px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.horiz{
+  display: flex;
+  flex-direction: row;
+}
+.flog{
+  /* margin: 5px; */
+  border: 2px solid #090a0a;
+  border-radius: 12px;
+  margin: 5px;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.add{
+  /* margin: 5px; */
+  border: 2px solid #090a0a;
+  border-radius: 12px;
+  margin: 5px;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

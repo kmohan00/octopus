@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import button from 'react';
 import livestill from './octopus.png';
 
 function Overview() {
