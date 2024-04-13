@@ -56,6 +56,13 @@ code {
   margin: 5px;
   margin-top: 10px;
   padding-left: 20px;
+  /* zoom: 0.50; */
+  margin-right: 20px;
+}
+.line{
+  /* zoom: .75; */
+  /* max-height: 90%; */
+  max-height: 80%;
 }
 .log{
   border: 2px solid #090a0a;
@@ -63,6 +70,7 @@ code {
   margin: 5px;
   margin-top: 10px;
   padding-left: 20px;
+  margin-right: 20px;
 }
 .horiz{
   display: flex;
