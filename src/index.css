@@ -50,6 +50,9 @@ code {
   margin-top: 10px;
   padding-left: 20px;
 }
+.infoLabelSel{
+  margin-right: 5px;
+}
 .chart{
   border: 2px solid #090a0a;
   border-radius: 12px;
@@ -62,7 +65,7 @@ code {
 .line{
   /* zoom: .75; */
   /* max-height: 90%; */
-  max-height: 80%;
+  max-height: 85%;
 }
 .log{
   border: 2px solid #090a0a;
