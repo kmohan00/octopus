@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import livestill from './octopus.png';
+import graphstill from './Sample-Graph.png';
+import { Link } from "react-router-dom";
 
 function Overview() {
     const [fedTime, setFedTime] = useState([]);
@@ -20,73 +22,93 @@ function Overview() {
         <div className='main'>
             <h1>Overview</h1>
             <div className='row'>
-                <div>
+                <div className='section'>
                     <p className='name'>
                         Food
                     </p>
                     <div className='elem'>
                         <div className='info'>
-                            <p>
+                            <p className='categoryName'>
                                 Last Fed:
                             </p>
                             <p>
-                                placeholder
+                                Today, 12 pm
                             </p>
                         </div>
-                        <p>
-                            Food:
-                        </p>
-                        <p>
-                            Next Feeding:
-                        </p>
-                        <button>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Food:
+                            </p>
+                            <p>
+                                Crabs (200 gms)
+                            </p>
+                        </div>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Next Feeding:
+                            </p>
+                            <p>
+                                Today, 3 pm
+                            </p>
+                        </div>
+                        <button className='logSpace'>
                             Log Entry
                         </button>
                     </div>
                 </div>
-                <div>
+                <div className='section'>
                     <p className='name'>
                         Weight
                     </p>
                     <div className='elem'>
                         <div className='info'>
-                            <p>
+                            <p className='categoryName'>
                                 Last Weighed:
                             </p>
                             <p>
-                                placeholder
+                                Today, 12 pm
                             </p>
                         </div>
-                        <p>
-                            Total Weight:
-                        </p>
-                        <p>
-                            Next Weighing:
-                        </p>
-                        <button>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Total Weight:
+                            </p>
+                            <p>
+                                32 kgs
+                            </p>
+                        </div>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Next Weighing:
+                            </p>
+                            <p>
+                                Tomorrow, 12 pm
+                            </p>
+                        </div>
+                        <button className='logSpace'>
                             Log Entry
                         </button>
                     </div>
                 </div>
-                <div>
+                <div className='section'>
                     <p className='name'>
                         Activity
                     </p>
                     <div className='elem'>
-                        <div className='info'>
-                            <p>
-                                *Chart will need to go here
-                            </p>
-                            <p>
-                                placeholder
-                            </p>
+                        <div>
+                            <img className='graphimg' src={graphstill}></img>
                         </div>
-                        <p>
-                            Current Activity: 
-                        </p>
-                        <button>
-                            Log Entry
-                        </button>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Current Activity:
+                            </p>
+                            <p>
+                                Medium
+                            </p>
+                            <button className='expandBut'>
+                                <Link to="/activity">Expand</Link>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

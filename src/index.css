@@ -14,40 +14,55 @@ code {
 
 .main{
   margin-left: 20px;
-  /* display: flex; */
 }
 .row {
   display: flex;
   flex-direction: row;
+}
+.section{
+  margin-right: 20px;
 }
 .name {
   margin-left: 10px;
   font-size: larger;
 }
 .elem {
-  /* height: 50vw;
-  width: 50vw; */
   display: flex;
-  /* padding: 50px 10px; */
-  padding: 10px;
-  /* padding-left: 10px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: 2px solid #090a0a;
   border-radius: 12px;
   background-color: #a9cdd4;
   margin: 5px;
   margin-top: -10px;
   flex-direction: column;
-  /* padding-bottom: -40px; */
+}
+.categoryName {
+  margin-right: 5px;
 }
 .info{
   display: flex;
   flex-direction: row;
 }
+.logSpace {
+  margin-top: 21px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.graphimg {
+  max-height: fit-content;
+}
+.expandBut {
+  max-height: 20px;
+  margin-left: 110px;
+}
 .live{
   border: 2px solid #090a0a;
   border-radius: 12px;
   margin: 5px;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 20px;
 }
 .infoLabelSel{
@@ -59,12 +74,9 @@ code {
   margin: 5px;
   margin-top: 10px;
   padding-left: 20px;
-  /* zoom: 0.50; */
   margin-right: 20px;
 }
 .line{
-  /* zoom: .75; */
-  /* max-height: 90%; */
   max-height: 85%;
 }
 .mlog{
