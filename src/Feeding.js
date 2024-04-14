@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 function Feeding() {
   // Initial feeding log data
@@ -26,6 +28,14 @@ function Feeding() {
     setLog([...log, formData]);
     // Reset form fields
     setFormData({ date: '', time: '', foodType: '', quantity: '',  weight: ''});
+    axios.post('/api/submit', { data: '[...log, formData]' })
+      .then(response => {
+        console.log('Response:', response.data);
+        // Handle response as needed
+      })
+      .catch(error => {
+        console.error('Error submitting data:', error);
+      });
   };
 
   // Function to handle form input changes
