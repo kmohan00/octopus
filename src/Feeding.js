@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 function Feeding() {
   // Initial feeding log data
   const [log, setLog] = useState([
-    { date: '2024-04-13', time: '10:00 AM', foodType: 'Shrimp', quantity: '3 oz' },
-    { date: '2024-04-14', time: '11:30 AM', foodType: 'Squid', quantity: '2 oz' },
-    { date: '2024-04-15', time: '12:15 PM', foodType: 'Fish', quantity: '4 oz' },
-    { date: '2024-04-16', time: '09:45 AM', foodType: 'Crab', quantity: '1.5 oz' },
+    { date: '2024-04-13', time: '10:00', foodType: 'Shrimp', quantity: '3', weight: '55' },
+    { date: '2024-04-14', time: '11:30', foodType: 'Squid', quantity: '2', weight: '58' },
+    { date: '2024-04-15', time: '12:15', foodType: 'Fish', quantity: '4', weight: '60' },
+    { date: '2024-04-16', time: '09:45', foodType: 'Crab', quantity: '1.5', weight: '57' },
     // Add more log entries as needed
   ]);
 
@@ -16,6 +16,7 @@ function Feeding() {
     time: '',
     foodType: '',
     quantity: '',
+    weight: '',
   });
 
   // Function to handle form submission
@@ -24,7 +25,7 @@ function Feeding() {
     // Add new entry to the log
     setLog([...log, formData]);
     // Reset form fields
-    setFormData({ date: '', time: '', foodType: '', quantity: '' });
+    setFormData({ date: '', time: '', foodType: '', quantity: '',  weight: ''});
   };
 
   // Function to handle form input changes
@@ -46,6 +47,7 @@ function Feeding() {
                     <div>Time</div>
                     <div>Food Type</div>
                     <div>Quantity (oz)</div>
+                    <div>Weight (kgs)</div>
                   </div>
                   <div className="log">
                     {log.map((entry, index) => (
@@ -54,6 +56,7 @@ function Feeding() {
                         <div>{entry.time}</div>
                         <div>{entry.foodType}</div>
                         <div>{entry.quantity}</div>
+                        <div>{entry.weight}</div>
                       </div>
                     ))}
                   </div>
@@ -64,6 +67,7 @@ function Feeding() {
                     <input className='inputElem' type="time" name="time" value={formData.time} onChange={handleChange} required />
                     <input className='inputElem' type="text" name="foodType" placeholder="Food Type" value={formData.foodType} onChange={handleChange} required />
                     <input className='inputElem' type="number" name="quantity" placeholder="Quantity (oz)" value={formData.quantity} onChange={handleChange} required />
+                    <input className='inputElem' type="number" name="weight" placeholder="Weight (kgs)" value={formData.weight} onChange={handleChange} required />
                     <button className='inputElem' type="submit">Add Entry</button>
                   </form>
               </div>

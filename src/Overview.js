@@ -29,10 +29,18 @@ function Overview() {
                     <div className='elem'>
                         <div className='info'>
                             <p className='categoryName'>
-                                Last Fed:
+                                Date:
                             </p>
                             <p>
-                                Today, 12 pm
+                                2024-04-13
+                            </p>
+                        </div>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Time:
+                            </p>
+                            <p>
+                                2024-04-13
                             </p>
                         </div>
                         <div className='info'>
@@ -40,19 +48,19 @@ function Overview() {
                                 Food:
                             </p>
                             <p>
-                                Crabs (200 gms)
+                                Crabs
                             </p>
                         </div>
                         <div className='info'>
                             <p className='categoryName'>
-                                Next Feeding:
+                                Amount (oz):
                             </p>
                             <p>
-                                Today, 3 pm
+                                3.3
                             </p>
                         </div>
                         <button className='logSpace'>
-                            Log Entry
+                            <Link to="/feeding">Log Entry</Link>
                         </button>
                     </div>
                 </div>
@@ -61,17 +69,25 @@ function Overview() {
                         Weight
                     </p>
                     <div className='elem'>
-                        <div className='info'>
+                    <div className='info'>
                             <p className='categoryName'>
-                                Last Weighed:
+                                Date:
                             </p>
                             <p>
-                                Today, 12 pm
+                                2024-04-13
                             </p>
                         </div>
                         <div className='info'>
                             <p className='categoryName'>
-                                Total Weight:
+                                Time:
+                            </p>
+                            <p>
+                                2024-04-13
+                            </p>
+                        </div>
+                        <div className='info'>
+                            <p className='categoryName'>
+                                Weight:
                             </p>
                             <p>
                                 32 kgs
@@ -79,14 +95,14 @@ function Overview() {
                         </div>
                         <div className='info'>
                             <p className='categoryName'>
-                                Next Weighing:
+                                Category:
                             </p>
                             <p>
-                                Tomorrow, 12 pm
+                                Healthy
                             </p>
                         </div>
                         <button className='logSpace'>
-                            Log Entry
+                            <Link to="/feeding">Log Entry</Link>
                         </button>
                     </div>
                 </div>
