@@ -137,7 +137,7 @@ code {
 }
 .log-entry {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   background-color: #f9f9f9;
   padding: 8px;
   border-bottom: 1px solid #ddd;
@@ -152,26 +152,24 @@ code {
   width: 100%;
   max-height: 300px; /* Adjust the maximum height as needed */
   overflow-y: auto;
-  /* overflow-x: scroll; */
 }
 .header {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   font-weight: bold;
   background-color: #f0f0f0;
   padding: 8px;
-  /* overflow-x: auto; */
 }
 .log {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   display: flex;
   flex-direction: column;
 }
 .log-entry {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   background-color: #f9f9f9;
   padding: 8px;
   border-bottom: 1px solid #ddd;

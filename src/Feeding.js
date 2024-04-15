@@ -5,10 +5,10 @@ import axios from 'axios';
 function Feeding() {
   // Initial feeding log data
   const [log, setLog] = useState([
-    { date: '2024-04-13', time: '10:00', foodType: 'Shrimp', quantity: '3', weight: '55' },
-    { date: '2024-04-14', time: '11:30', foodType: 'Squid', quantity: '2', weight: '58' },
-    { date: '2024-04-15', time: '12:15', foodType: 'Fish', quantity: '4', weight: '60' },
-    { date: '2024-04-16', time: '09:45', foodType: 'Crab', quantity: '1.5', weight: '57' },
+    { date: '2024-04-13', time: '10:00', enrichment: 'Social', duration: '30', foodType: 'Shrimp', quantity: '3', weight: '55' },
+    { date: '2024-04-14', time: '11:30', enrichment: 'Food', duration: '35', foodType: 'Squid', quantity: '2', weight: '58' },
+    { date: '2024-04-15', time: '12:15', enrichment: 'Sensory', duration: '28', foodType: 'Fish', quantity: '4', weight: '60' },
+    { date: '2024-04-16', time: '09:45', enrichment: 'Physical', duration: '25', foodType: 'Crab', quantity: '1.5', weight: '57' },
     // Add more log entries as needed
   ]);
 
@@ -16,9 +16,11 @@ function Feeding() {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
+    enrichment: '',
+    duration: '',
     foodType: '',
     quantity: '',
-    weight: '',
+    weight: ''
   });
 
   // Function to handle form submission
@@ -27,7 +29,7 @@ function Feeding() {
     // Add new entry to the log
     setLog([...log, formData]);
     // Reset form fields
-    setFormData({ date: '', time: '', foodType: '', quantity: '',  weight: ''});
+    setFormData({ date: '', time: '', enrichment: '', duration: '', foodType: '', quantity: '',  weight: ''});
     // Make POST request to Python backend
     const axiosConfig = {
       headers: {
@@ -62,6 +64,8 @@ function Feeding() {
                   <div className="header">
                     <div>Date</div>
                     <div>Time</div>
+                    <div>Enrichment Type</div>
+                    <div>Duration (min)</div>
                     <div>Food Type</div>
                     <div>Quantity (oz)</div>
                     <div>Weight (kgs)</div>
@@ -71,6 +75,8 @@ function Feeding() {
                       <div key={index} className="log-entry">
                         <div>{entry.date}</div>
                         <div>{entry.time}</div>
+                        <div>{entry.enrichment}</div>
+                        <div>{entry.duration}</div>
                         <div>{entry.foodType}</div>
                         <div>{entry.quantity}</div>
                         <div>{entry.weight}</div>
@@ -82,6 +88,8 @@ function Feeding() {
                 <form onSubmit={handleSubmit} className="add-entry-form">
                     <input className='inputElem' type="date" name="date" value={formData.date} onChange={handleChange} required />
                     <input className='inputElem' type="time" name="time" value={formData.time} onChange={handleChange} required />
+                    <input className='inputElem' type="text" name="enrichment" placeholder="Enrichment Type" value={formData.enrichment} onChange={handleChange} required />
+                    <input className='inputElem' type="number" name="duration" placeholder="Duration (min)" value={formData.duration} onChange={handleChange} required />
                     <input className='inputElem' type="text" name="foodType" placeholder="Food Type" value={formData.foodType} onChange={handleChange} required />
                     <input className='inputElem' type="number" name="quantity" placeholder="Quantity (oz)" value={formData.quantity} onChange={handleChange} required />
                     <input className='inputElem' type="number" name="weight" placeholder="Weight (kgs)" value={formData.weight} onChange={handleChange} required />
