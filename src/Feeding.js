@@ -28,7 +28,14 @@ function Feeding() {
     setLog([...log, formData]);
     // Reset form fields
     setFormData({ date: '', time: '', foodType: '', quantity: '',  weight: ''});
-    axios.post('/api/submit', { data: '[...log, formData]' })
+    // Make POST request to Python backend
+    const axiosConfig = {
+      headers: {
+        'Content-Type': 'application/json'
+        // Add any other headers if needed
+      }
+    };
+    axios.post('http://localhost:5000/api/add_entry', { data: formData }, axiosConfig)
       .then(response => {
         console.log('Response:', response.data);
         // Handle response as needed
@@ -78,7 +85,7 @@ function Feeding() {
                     <input className='inputElem' type="text" name="foodType" placeholder="Food Type" value={formData.foodType} onChange={handleChange} required />
                     <input className='inputElem' type="number" name="quantity" placeholder="Quantity (oz)" value={formData.quantity} onChange={handleChange} required />
                     <input className='inputElem' type="number" name="weight" placeholder="Weight (kgs)" value={formData.weight} onChange={handleChange} required />
-                    <button className='inputElem' type="submit">Add Entry</button>
+                    <button className='inputElem' type="submit" >Add Entry</button>
                   </form>
               </div>
             </div>
